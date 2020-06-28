@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{144:function(e){e.exports=JSON.parse('{"docsSidebars":{"docs":[{"collapsed":true,"type":"category","label":"Quickstart","items":[{"type":"link","label":"Quickstart","href":"/backoffice/quickstart"}]}]},"permalinkToSidebar":{"/backoffice/quickstart":"docs"}}')}}]);
