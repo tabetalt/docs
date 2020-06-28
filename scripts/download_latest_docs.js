@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
+const rimraf = require('rimraf');
 const { Octokit } = require('@octokit/rest');
 const yaml = require('yaml');
 const cnfp = path.resolve(__dirname, '..', 'config.yaml');
@@ -9,7 +10,7 @@ const config = yaml.parse(fs.readFileSync(cnfp, 'utf8'));
 (async () => {
   const options = {
     githubToken: process.env.GITHUB_TOKEN,
-    basePath: path.resolve(__dirname, '..', 'docs', config.basePath),
+    basePath: path.resolve(__dirname, '..', 'products'),
   };
 
   if (!options.githubToken) {
@@ -23,13 +24,16 @@ const config = yaml.parse(fs.readFileSync(cnfp, 'utf8'));
   const modules = config.products || [];
   modules.forEach(async (mod) => {
     const repoBasePath = path.resolve(options.basePath, mod.slug);
+    console.log(repoBasePath);
+    rimraf.sync(repoBasePath);
 
     try {
-      const paths = repoBasePath.split('/');
-      paths.pop();
-      fs.mkdirSync(path.resolve(repoBasePath, ...paths), {
-        recursive: true,
-      });
+      if (!fs.existsSync(repoBasePath)) {
+        console.log(repoBasePath);
+        fs.mkdirSync(repoBasePath, {
+          recursive: true,
+        });
+      }
     } catch (e) {
       console.error(e);
     }
@@ -94,7 +98,9 @@ const config = yaml.parse(fs.readFileSync(cnfp, 'utf8'));
         if (f.path.match('/')) {
           const paths = f.path.split('/');
           paths.pop();
-          fs.mkdirSync(path.resolve(repoBasePath, ...paths), {
+          const mp = path.resolve(repoBasePath, ...paths);
+          console.log(mp);
+          fs.mkdirSync(mp, {
             recursive: true,
           });
         }
@@ -108,6 +114,7 @@ const config = yaml.parse(fs.readFileSync(cnfp, 'utf8'));
         const content = Buffer.from(blob.data.content, 'base64').toString(
           'utf8'
         );
+        console.log(path.resolve(repoBasePath, f.path));
         fs.writeFileSync(path.resolve(repoBasePath, f.path), content, 'utf-8');
       });
   });

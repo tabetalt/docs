@@ -1,7 +1,7 @@
-basePath: products
 products:
   - name: Backoffice API
     slug: backoffice
     publicRepo: false
     changelog: true
+    homePageId: backoffice/quickstart
     repo: tabetalt/backend

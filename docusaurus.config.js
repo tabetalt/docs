@@ -1,12 +1,39 @@
 const admonitions = require('remark-admonitions');
 const path = require('path');
 const fs = require('fs');
+const modules = require('./getModules');
 
+const multipleDocs = [
+  {
+    id: 'docs',
+    path: 'docs',
+    sidebarPath: require.resolve('./sidebars.js'),
+    // editUrl: `https://github.com/tabetalt/docs/edit/master`,
+    routeBasePath: 'intro',
+    showLastUpdateAuthor: true,
+    showLastUpdateTime: true,
+    remarkPlugins: [admonitions],
+  },
+].concat(
+  modules.map((mod) => ({
+    id: mod.slug,
+    name: mod.slug,
+    path: `products/${mod.slug}`,
+    sidebarPath: require.resolve(`./products/${mod.slug}/sidebars.js`),
+    editUrl: mod.publicRepo && `https://github.com/${mod.repo}/edit/master`,
+    routeBasePath: mod.slug,
+    homePageId: mod.homePageId,
+    showLastUpdateAuthor: true,
+    showLastUpdateTime: true,
+    admonitions: true,
+    remarkPlugins: [admonitions],
+  }))
+);
 
 const links = [
   {
-    to: 'index',
-    activeBasePath: `index`,
+    to: 'intro/index',
+    activeBasePath: `intro/index`,
     label: `Docs`,
     position: 'left',
   },
@@ -57,21 +84,22 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        path: 'docs',
-        sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: `https://github.com/tabetalt/docs/edit/master`,
-        routeBasePath: '',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        remarkPlugins: [admonitions],
-      },
-    ],
+    ['docusaurus-multiple-docs', multipleDocs],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     path: 'docs',
+    //     sidebarPath: require.resolve('./sidebars.js'),
+    //     // editUrl: `https://github.com/tabetalt/docs/edit/master`,
+    //     routeBasePath: '',
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //     remarkPlugins: [admonitions],
+    //   },
+    // ],
     ['@docusaurus/plugin-content-pages'],
     // ['@docusaurus/plugin-google-analytics'],
-    ['@docusaurus/plugin-sitemap']
+    ['@docusaurus/plugin-sitemap'],
   ],
   themes: [
     [
@@ -82,22 +110,5 @@ module.exports = {
     ],
     // ['@docusaurus/theme-search-algolia'],
   ],
-  // presets: [
-  //   [
-  //     '@docusaurus/preset-classic',
-  //     {
-  //       docs: {
-  //         // It is recommended to set document id as docs home page (`docs/` path).
-  //         homePageId: 'docs',
-  //         sidebarPath: require.resolve('./sidebars.js'),
-  //         // Please change this to your repo.
-  //         editUrl:
-  //           'https://github.com/facebook/docusaurus/edit/master/website/',
-  //       },
-  //       theme: {
-  //         customCss: require.resolve('./src/css/theme.css'),
-  //       },
-  //     },
-  //   ],
-  // ],
+  // presets: [['@docusaurus/preset-classic']],
 };

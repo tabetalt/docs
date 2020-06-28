@@ -1,10 +1,12 @@
-const modules = require('./sidebarModule');
-
-console.log(modules);
+const modules = require('./getModules');
 
 module.exports = {
-  docs: {
+  base: {
     Welcome: ['index'],
-    ...modules,
+    Products: modules.map((mod) => ({
+      type: 'link',
+      label: mod.name, // The label that should be displayed (string).
+      href: `/${mod.homePageId}`, // The target URL (string).
+    })),
   },
 };

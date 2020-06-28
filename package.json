@@ -15,6 +15,7 @@
     "@docusaurus/preset-classic": "^2.0.0-alpha.58",
     "@octokit/rest": "^18.0.0",
     "clsx": "^1.1.1",
+    "docusaurus-multiple-docs": "^1.0.0-alpha.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "remark-admonitions": "^1.2.1",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "simple-git": "^2.11.0"
   }
 }
