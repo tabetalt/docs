@@ -1,0 +1,22 @@
+:root {
+  --ifm-color-primary: #FFA665;
+  --ifm-background-color: #F6F6F9;
+  --ifm-navbar-background-color: #F6F6F9;
+  --ifm-font-color-base: #1B202E;
+  --ifm-menu-color: #1B202E;
+  --ifm-color-success: #00CD98;
+  --ifm-color-info: #2B40B5;
+  --ifm-color-warning: #E03B54;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #1B202E;
+  --ifm-navbar-background-color: #1B202E;
+  --ifm-font-color-base: #F6F6F9;
+  --ifm-menu-color: #F6F6F9;
+}
+
+.alert--info {
+  --ifm-alert-color: #F6F6F9;
+  --ra-admonition-icon-color: #F6F6F9;
+}

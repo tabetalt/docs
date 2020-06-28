@@ -1,0 +1,7 @@
+basePath: products
+products:
+  - name: Backoffice API
+    slug: backoffice
+    publicRepo: false
+    changelog: true
+    repo: tabetalt/backend
