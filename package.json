@@ -15,7 +15,7 @@
     "@docusaurus/preset-classic": "^2.0.0-alpha.58",
     "@octokit/rest": "^18.0.0",
     "clsx": "^1.1.1",
-    "docusaurus-multiple-docs": "^1.0.0-alpha.1",
+    "docusaurus-multiple-docs": "1.0.0-alpha.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "remark-admonitions": "^1.2.1",

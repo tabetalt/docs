@@ -3543,10 +3543,10 @@ docsearch.js@^2.6.3:
     to-factory "^1.0.0"
     zepto "^1.2.0"
 
-docusaurus-multiple-docs@^1.0.0-alpha.1:
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/docusaurus-multiple-docs/-/docusaurus-multiple-docs-1.0.0-alpha.1.tgz#ed4e94305f9b83960248ca8d9f304e06310a3fe1"
-  integrity sha512-ELgDdE+MLvGm/vRDwq984fBEFsIVyq95fblCMPLqsosU4tJSFNEo9tvfuvDjD1reDGeJUq6r7FAlNo7D9ir+aw==
+docusaurus-multiple-docs@1.0.0-alpha.3:
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/docusaurus-multiple-docs/-/docusaurus-multiple-docs-1.0.0-alpha.3.tgz#fee7072d4736d457c1e4bf0b4d204ea06737c2bb"
+  integrity sha512-ZhZf39bsZpbxAKRRjMH0I8w+mSe3vZL6R2HvFH9t1M33LOpKuxB6/ChgtuRetb3mlUEcpJsozO8VIbroHQ/Zkg==
   dependencies:
     "@docusaurus/plugin-content-docs" "^2.0.0-alpha.58"
     deepmerge "^4.2.2"
