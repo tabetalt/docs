@@ -55,31 +55,31 @@ const config = yaml.parse(fs.readFileSync(cnfp, 'utf8'));
     }
 
     const docsDirectory = mainTree.data.tree.find((f) => f.path === 'docs');
-    if (mod.changelog) {
-      const changelog = mainTree.data.tree.find(
-        (f) => f.path === 'CHANGELOG.md'
-      );
+    // if (mod.changelog) {
+    //   const changelog = mainTree.data.tree.find(
+    //     (f) => f.path === 'CHANGELOG.md'
+    //   );
 
-      if (!changelog) {
-        console.warn(`Docs directory (${mod.name}): CHANGELOG.md is missing.`);
-        return;
-      }
+    //   if (!changelog) {
+    //     console.warn(`Docs directory (${mod.name}): CHANGELOG.md is missing.`);
+    //     return;
+    //   }
 
-      const changeLogBlob = await octokit.git.getBlob({
-        ...repoCnf,
-        file_sha: changelog.sha,
-      });
+    //   const changeLogBlob = await octokit.git.getBlob({
+    //     ...repoCnf,
+    //     file_sha: changelog.sha,
+    //   });
 
-      const content = Buffer.from(
-        changeLogBlob.data.content,
-        'base64'
-      ).toString('utf8');
-      fs.writeFileSync(
-        path.resolve(repoBasePath, 'CHANGELOG.md'),
-        content,
-        'utf-8'
-      );
-    }
+    //   const content = Buffer.from(
+    //     changeLogBlob.data.content,
+    //     'base64'
+    //   ).toString('utf8');
+    //   fs.writeFileSync(
+    //     path.resolve(repoBasePath, 'CHANGELOG.md'),
+    //     content,
+    //     'utf-8'
+    //   );
+    // }
     if (!docsDirectory) {
       console.warn(`Docs directory (${mod.name}): ${mod.repo} is missing.`);
       return;

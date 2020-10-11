@@ -5,8 +5,7 @@
 /build
 
 # Docs
-/docs/products/*
-!/docs/products/.gitkeep
+/products
 
 # Generated files
 .docusaurus
