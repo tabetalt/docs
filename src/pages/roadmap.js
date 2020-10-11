@@ -12,11 +12,10 @@ const Roadmap = () => {
         width="100%"
         height="100%"
         sx={{
-          height: '100vh',
+          height: '95vh',
           border: '0'
         }}
       />
-      helloooo
     </Layout>
   );
 }
