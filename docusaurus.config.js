@@ -18,8 +18,8 @@ const multipleDocs = [
   modules.map((mod) => ({
     id: mod.slug,
     name: mod.slug,
-    path: `products/${mod.slug}`,
-    sidebarPath: require.resolve(`./products/${mod.slug}/sidebars.js`),
+    path: `projects/${mod.slug}`,
+    sidebarPath: require.resolve(`./projects/${mod.slug}/sidebars.js`),
     editUrl: mod.publicRepo && `https://github.com/${mod.repo}/edit/master`,
     routeBasePath: mod.slug,
     homePageId: mod.homePageId,

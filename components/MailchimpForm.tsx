@@ -15,7 +15,7 @@ const MailchimpForm = () => {
   const { loading, error, data } = mailchimp;
   return (
     <>
-      <h2>Sign up to our newsletter</h2>
+      <h2>Sign up for our newsletter</h2>
       <p>
         We love to share updates, tips and tricks. We promise not to spam down
         your inbox, and most importantly not share these details to anyone!
