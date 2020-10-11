@@ -37,6 +37,12 @@ const links = [
     label: `Docs`,
     position: 'left',
   },
+  {
+    to: 'roadmap',
+    activeBasePath: `roadmap`,
+    label: `Roadmap`,
+    position: 'left',
+  },
   // {
   //   href: 'https://tabetalt.no/blog', label: 'Blog',
   //   position: 'left',
