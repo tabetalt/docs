@@ -7,7 +7,7 @@ const url =
   'https://tabetalt.us4.list-manage.com/subscribe/post?u=dfea72ea8ea1dd777ea638f05&amp;id=48447e91e7';
 
 const MailchimpForm = () => {
-  const [accepted, setAccepted] = useState(true);
+  const [accepted, setAccepted] = useState(false);
   const [email, setEmail] = useState('');
   const [mailchimp, subscribe, reset] = useMailchimp({
     url,
