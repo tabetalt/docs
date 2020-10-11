@@ -1,7 +1,7 @@
-products:
-  - name: Backoffice API
-    slug: backoffice
+projects:
+  - name: API
+    slug: api
     publicRepo: false
     changelog: true
-    homePageId: backoffice/quickstart
+    homePageId: api/quickstart
     repo: tabetalt/backend
