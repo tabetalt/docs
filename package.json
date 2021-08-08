@@ -2,6 +2,7 @@
   "name": "tabetalt-docs",
   "version": "0.0.0",
   "private": true,
+  "repository": "github:tabetalt/docs",
   "scripts": {
     "prestart": "node scripts/download_latest_docs.js",
     "start": "docusaurus start",
@@ -9,6 +10,18 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.58",
@@ -26,18 +39,6 @@
     "remark-admonitions": "^1.2.1",
     "theme-ui": "^0.4.0-rc.5",
     "yaml": "^1.10.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
